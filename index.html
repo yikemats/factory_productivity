@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Title -->
+  <title>Comparison of Tesla and Toyota Factories</title>
+
+  <style>
+
+    /* General */
+    h1 {
+    text-align: center;
+    color: #e9ecef;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    p {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    }
+
+    .text-container {
+    max-width: 660px;
+    margin: 0 auto;
+    line-height: 30px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+      
+
+    /* video header */
+    * {
+    box-sizing: content-box;
+    }
+
+    #videoContainer {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    }
+
+    #myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+    .content {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #e9ecef;
+    width: 100%;
+    padding: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #d90429;
+    color: #e9ecef;
+    cursor: pointer;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #myBtn:hover {
+    background: #ddd;
+    color: black;
+    }
+
+    /* Footer */
+    .footer-basic {
+    padding: 40px 0;
+    background-color: #e9ecef;
+    color: #4b4c4d;
+    }
+    
+    .footer-basic ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    }
+    
+    .footer-basic li {
+    padding: 0 10px;
+    }
+    
+    .footer-basic ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+    }
+    
+    .footer-basic ul a:hover {
+    opacity: 1;
+    }
+    
+    .footer-basic .social {
+    text-align: center;
+    padding-bottom: 20px;
+    }
+    
+    .footer-basic .social>a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #d90429;
+    margin: 0 8px;
+    color: inherit;
+    opacity: 0.75;
+    }
+    
+    .footer-basic .social>a:hover {
+    opacity: 0.9;
+    }
+    
+    .footer-basic .copyright {
+    margin: top 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #d90429;
+    margin: bottom 0px;
+    }
+    
+    /* GIF display */
+    * {
+    box-sizing: content-box;
+    width: 100%;
+    }
+    
+    .column {
+    position: relative;
+    float: center;
+    width: 45%;
+    padding: 5px;
+    }
+    
+    .row {
+    display: flex;
+    justify-content: center;
+    /* Center the columns horizontally */
+    align-items: normal;
+    /* Position the columns vertically */
+    height: 100%;
+    /* Make the row take the full viewport height */
+    }
+
+    /* scrollama */
+    #scrolly {
+      position: relative;
+      padding: 1rem;
+    }
+
+    .scrolly-overlay {
+      position: relative;
+      padding: 0;
+      max-width: 35rem;
+      margin: 0 auto;
+    }
+
+    #scrolly2 {
+        position: relative;
+        padding: 1rem;
+      }
+
+    .scrolly2-overlay {
+      position: relative;
+      padding: 0;
+      max-width: 35rem;
+      margin: 0 auto;
+    }
+
+
+    .sticky-thing {
+      position: -webkit-sticky;
+      position: sticky;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      z-index: 0;
+      top: 0;
+      height: 100vh;
+      /* Center everything inside */
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .step {
+      margin: 0 auto 2rem auto;
+      margin-bottom: 25rem;
+      background-color: #eee;
+      background-color: #fff;
+      color: black;
+    }
+
+    .step p {
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .hidden { visibility: hidden; }
+
+    /* When it's less than 700 pixels wide, do normal scrollytelling */
+    @media only screen and (min-width: 700px) {
+      #scrolly.side-by-side {
+        display: flex;
+      }
+
+      #scrolly.side-by-side > div {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 0.75em;
+      }
+
+      #scrolly.side-by-side .scrolly-overlay {
+        margin-top: 70vh;
+        order: 0;
+        /* Change these to adjust sizing options */
+        min-width: 15rem;
+        max-width: 20rem;
+      }
+
+      #scrolly.side-by-side .sticky-thing {
+        order: 1;
+        flex-grow: 2;
+      }
+    }
+
+      /* When it's less than 700 pixels wide, do normal scrollytelling */
+      @media only screen and (min-width: 700px) {
+      #scrolly2.side-by-side {
+        display: flex;
+      }
+
+      #scrolly2.side-by-side > div {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 0.75em;
+      }
+
+      #scrolly2.side-by-side .scrolly2-overlay {
+        margin-top: 70vh;
+        order: 0;
+        /* Change these to adjust sizing options */
+        min-width: 15rem;
+        max-width: 20rem;
+      }
+
+      #scrolly2.side-by-side .sticky-thing {
+        order: 1;
+        flex-grow: 2;
+      }
+    }
+  </style>
+
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+
+
+  <!-- Footer-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body style="background-color: #e9ecef;">
+  <!-- video header -->
+  <div id="videoContainer">
+    <video autoplay muted loop id="myVideo">
+      <source src="tesla_toyota.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <div class="content">
+      <h1>Factory Geek Journalist's Aerial Comparison:<br> Tesla vs. Toyota's Latest
+        Factories</h1>
+      <button id="myBtn" onclick="myFunction()">Pause</button>
+    </div>
+  </div>
+
+  <!-- contents -->
+  <div class="text-container">
+
+    <p>
+      <br>
+      <strong>By Yuka Ikematsu</strong> | <small><a target=_new href="https://twitter.com/YukaI_NYC">@YukaI_NYC</a></small><br><em>August 8, 2023</em>
+    </p>
+  
+    <p><strong>Have you heard of Toyota Motor Corporation? Of course, you do.</strong> Established in 1937 in Koromo (now Toyota City),Japan, Toyota grew to become the world's largest automotive manufacturer. It stands as one of the most renowned Japanese companies worldwide.</p>
+
+    <p>Achieving a production volume of 10.48 million vehicles in 2022, Toyota secured its position as the world's top producer for the third consecutive year. Comparatively, in the same year, American electric vehicle manufacturer Tesla, founded in 2003, produced 1.37 million vehicles, highlighting a substantial difference.</p>
+
+    <p>The reason behind Toyota's ascent to becoming the world's largest automaker lies in the efficient production system it fostered internally since the 1960s, known as the "Toyota Production System." Toyota demonstrated to the world that efficient production methods are an absolute necessity for a company to become a global leader in manufacturing.</p>
+
+    <p>As a Japanese business journalist, I have extensively covered Toyota's improvement methodology, known as "Kaizen." My passion for factories started from childhood, playing inside my father's small factory in Chiba, Japan. Even though the factory was located a 30-minute drive away from my actual home, it was part of my dear home. After becoming a journalist, I actively engaged with the people on the factory floor, collaborating with them on Kaizen practices as part of my interview process (sometimes, it was more than the interview!).</p>
+
+    <p><strong>Okay, I admit. I am a "factory geek."</strong></p>
+    <br>
+
+    <h3>A generational shift happening?</h3>
+    <br>
+
+    <p>Toyota's remarkable growth seemed untouchable by other companies, but it is now closely pursued by Tesla "in a way". If you look at its stock price, it has comfortably surpassed Toyota's.</p>
+
+    <p>As of August 4, 2023, Tesla's stock price on the New York Stock Exchange stands at $170.79, while Toyota's stock price lags at $253.86, making Tesla's 1.5 times higher than Toyota's.</p>
+
+    <p>What captivates investors about Tesla? The key lies in Tesla's rapid development of its production system, surpassing even the renowned Toyota Production System. The effect of this innovation is evident in Tesla's performance, as its profit margin in 2022 reached 25.6%, while Toyota's remained at 17.0%.</p>
+
+    <p>I wrote <a target=_new href="https://business.nikkei.com/atcl/gen/19/00119/041400089/">an article</a> to comprehend the remarkable nature of Tesla's production system before. So I want to examine the differences between Toyota and Tesla's factories from a "bird's eye".</p>
+
+    <p><strong>Fortunately, both companies completed the construction of factories in the United States about the same time.</strong></p>
+
+  </div>
+
+  <!-- scrollama -->
+  <section id="scrolly">
+    <div class="sticky-thing">
+      <div class="ai2html-container">
+        <!-- ai file: factories.ai -->
+        <style media="screen,print">
+          #g-factories-box ,
+          #g-factories-box .g-artboard {
+            margin:0 auto;
+          }
+          #g-factories-box p {
+            margin:0;
+          }
+          #g-factories-box .g-aiAbs {
+            position:absolute;
+          }
+          #g-factories-box .g-aiImg {
+            position:absolute;
+            top:0;
+            display:block;
+            width:100% !important;
+          }
+          #g-factories-box .g-aiSymbol {
+            position: absolute;
+            box-sizing: border-box;
+          }
+          #g-factories-box .g-aiPointText p { white-space: nowrap; }
+          #g-factories-_1 {
+            position:relative;
+            overflow:hidden;
+          }
+          #g-factories-_1 p {
+            font-weight:500;
+            line-height:14px;
+            height:auto;
+            opacity:1;
+            letter-spacing:0em;
+            font-size:12px;
+            text-align:left;
+            color:#d90429;
+            text-transform:none;
+            padding-bottom:0;
+            padding-top:0;
+            mix-blend-mode:normal;
+            font-style:normal;
+            position:static;
+          }
+          #g-factories-_1 .g-pstyle0 {
+            height:14px;
+            text-align:center;
+          }
+
+        </style>
+
+    <div id="g-factories-box" class="ai2html">
+
+      <!-- Artboard: _1 -->
+      <div id="g-factories-_1" class="g-artboard" style="max-width: 842px;max-height: 595px" data-aspect-ratio="1.415" data-min-width="0">
+        <div style="padding: 0 0 70.6887% 0;"></div>
+          <img id="g-factories-_1-img" class="g-factories-_1-img g-aiImg" alt="A US map to show the places of Tesla and Toyota's Latest
+          Factories" src="factories-_1.jpg"/>
+          <img id="g-factories-_1-toyota-img" class="g-factories-_1-toyota-img g-aiImg" alt="The toyota's new factory is located at Huntsville, Alabama." src="factories-_1-toyota.svg"/>
+          <img id="g-factories-_1-tesla-img" class="g-factories-_1-tesla-img g-aiImg" alt="The Tesla's Giga Factory is built at Austin, Texas." src="factories-_1-tesla.svg"/>
+            <div id="g-ai0-1" class="g-toyota g-aiAbs g-aiPointText" style="top:39.2329%;margin-top:-15.5px;left:59.3866%;margin-left:-55.5px;width:111px;">
+              <p class="g-pstyle0">Mazda Toyota </p>
+              <p class="g-pstyle0">Manufacturing</p>
+            </div>
+            <div id="g-ai0-2" class="g-tesla g-aiAbs g-aiPointText" style="top:49.952%;margin-top:-8.3px;left:42.9776%;margin-left:-54.5px;width:109px;">
+              <p class="g-pstyle0">Tesla Giga Texas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scrolly-overlay">
+      <div class="step" id="step-zero">
+        <p>Let's find out the locations.</p>
+      </div>
+      <div class="step" id="step-one">
+        <p>In April 2022, <strong>Tesla</strong> started the operation of its massive "Giga Texas" factory in Austin,
+          Texas. It now produces the SUV "Model Y" and the pickup truck "Cybertruck."</p>
+      </div>
+      <div class="step" id="step-two">
+        <p>In September 2021, <strong>Toyota</strong>, in collaboration with Mazda, commenced production at their
+          factory in Huntsville, Alabama. This facility manufactures Toyota's "Corolla Cross" and Mazda's "CX-50."</p>
+      </div>
+      <div class="step" id="step-three">
+        <p>Now, <strong>let's take a bird's-eye view</strong> and observe the development of both factories up until completion. </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- back to contents -->
+  <div class="text-container">
+
+      <h5><strong>Looking at Tesla's factory (left) and Toyota's factory from the sky ......</strong></h5>
+    
+      <p>The GIF below will show you the changes from 2017 to 2023, with each second representing one year (it plays only once, so <strong>refresh if you want to see it again</strong>).</p>
+  
+  </div>
+  
+  <!-- GIF Display -->
+  <div class="row">
+    <div class="column">
+      <img src="TeslaNonLoop.gif"
+        alt="Gif, the collection of Google Earth satellite photos, shows Tesla's factory in Texas that completed construction within a year."
+        style="width:100%">
+    </div>
+    <div class="column">
+      <img src="ToyotaNonLoop.gif"
+        alt="Gif, the collection of Google Earth satellite photos, shows how Toyota and Mazda's factory had developed in Alabama. It took more than 2 years."
+        style="width:100%">
+    </div>
+  </div>
+
+  <!-- back to contents -->
+  <div class="text-container">
+    <p></p>
+
+    <p>Did you notice the striking contrast?</p>
+    
+    <p>Incredibly, Tesla achieved full construction completion in under a year, whereas Toyota took over two years to reach the same milestone.</p>
+
+    <p>The two GIFs above are set to the same size, from which another interesting fact can be gleaned. Tesla is composed of one large factory building, while Toyota is composed of several factory buildings.</p>
+
+    <p>In fact, Toyota's factory is divided into separate buildings for different manufacturing processes carried out by its suppliers.</p>
+
+  </div>
+
+  <!-- Second scrollama contents -->
+
+  <section id="scrolly2">
+    <div class="sticky-thing">
+      <div class="ai2html-container">
+        <!-- ai file: factories.ai -->
+        <style media="screen,print">
+          #g-suppliers-box ,
+          #g-suppliers-box .g-artboard {
+            margin:0 auto;
+          }
+          #g-suppliers-box p {
+            margin:0;
+          }
+          #g-suppliers-box .g-aiAbs {
+            position:absolute;
+          }
+          #g-suppliers-box .g-aiImg {
+            position:absolute;
+            top:0;
+            display:block;
+            width:100% !important;
+          }
+          #g-suppliers-box .g-aiSymbol {
+            position: absolute;
+            box-sizing: border-box;
+          }
+          #g-suppliers-box .g-aiPointText p { white-space: nowrap; }
+          #g-suppliers-_1 {
+            position:relative;
+            overflow:hidden;
+          }
+          #g-suppliers-_1 p {
+          font-weight:500;
+          line-height:17px;
+          height:auto;
+          opacity:1;
+          letter-spacing:0em;
+          font-size:14px;
+          text-align:left;
+          color:rgb(217,4,41);
+          text-transform:none;
+          padding-bottom:0;
+          padding-top:0;
+          mix-blend-mode:normal;
+          font-style:normal;
+          position:static;
+          }
+          #g-suppliers-_1 .g-pstyle0 {
+            height:17px;
+            color:#d90429;
+          }
+          #g-suppliers-_1 .g-pstyle1 {
+            height:17px;
+          }
+        
+        </style>
+        
+        <div id="g-suppliers-box" class="ai2html">
+        
+          <!-- Artboard: _1 -->
+          <div id="g-suppliers-_1" class="g-artboard" style="max-width: 842px;max-height: 595px" data-aspect-ratio="1.415" data-min-width="0">
+        <div style="padding: 0 0 70.6887% 0;"></div>
+            <img id="g-suppliers-_1-img" class="g-suppliers-_1-img g-aiImg" alt="The aerial photo of the Toyota's Alabama Plant. There are three factories aligned vertically in the center, with the lower two being Toyota and Mazda's plants. The one above is a supplier's factory, and they are connected by roads covered with white tents. Adjacent to the lower two factories on the right, there is a vertically elongated building, which is also owned by Toyota and Mazda. The small building next to it on the right is another supplier's factory." src="suppliers-_1.jpg"/>
+            <img id="g-suppliers-_1-supplier2-img" class="g-suppliers-_1-supplier2-img g-aiImg" alt="A rectangle to spot the supplier's building above Toyota and Mazda's plants." src="suppliers-_1-supplier2.svg"/>
+            <img id="g-suppliers-_1-supplier1-img" class="g-suppliers-_1-supplier1-img g-aiImg" alt="A rectangle to locate the other supplier's plant on the right-hand side of the Toyota and Mazda plants." src="suppliers-_1-supplier1.svg"/>
+            <div id="g-ai0-3" class="g-supplier1 g-aiAbs g-aiPointText" style="top:25.7112%;margin-top:-10px;left:23.6653%;width:143px;">
+              <p class="g-pstyle0">Metal-Part Supplier</p>
+            </div>
+            <div id="g-ai0-4" class="g-supplier2 g-aiAbs g-aiPointText" style="top:32.0956%;margin-top:-10px;left:68.406%;width:141px;">
+              <p class="g-pstyle1">Resin-Part Supplier</p>
+            </div>
+          </div>
+        
+        </div>            
+
+      </div>
+    </div>
+
+    <div class="scrolly2-overlay">
+      <div class="step" id="step-four">
+        <p>Let's take a look!</p>
+      </div>
+      <div class="step" id="step-five">
+        <p>The metal supplier, Y-tec Keylex Toyotetsu Alabama, operates within this facility, manufacturing metal components.</p>
+      </div>
+      <div class="step" id="step-six">
+        <p>Meanwhile, this particular site belongs to DaikyoNishikawa USA, dedicated to the production of resin parts.</p>
+      </div>
+      <div class="step" id="step-seven">
+        <p>Even the white lines that connect these structures are visible. These lines represent roads that connect to the assembly line.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="text-container">
+    <br>
+    <p>Based on the findings above, one can say that while Tesla has largely internalized the automotive production process, Toyota relies on external suppliers for component manufacturing.</p>
+
+    <p>While this is a personal perspective from a factory enthusiast, internalizing the manufacturing process as much as possible is advantageous. This approach reduces the effort required to transport goods and convey specific requirements for desired items to external parties, leading to more efficient production. Tesla is significantly advantaged in this regard.</p>
+
+    <p>Even Toyota, which has reigned as the champion, cannot afford to be complacent. The day for a generational shift in production volume might not be as distant as one may think.</p>
+    
+  </div>
+
+    
+    <!-- Footer -->
+    <p style="font-size: medium; margin-top: 2rem; text-align: center;">
+        <i>All the code and data for this project is available on <a href="https://github.com/yikemats/donations">GitHub</a></i><br>.
+    </p>
+
+    <div class="footer-basic">
+      <footer>
+        <div class="social">
+          <a href="https://twitter.com/YukaI_NYC" target="_blank"><i class="icon ion-social-twitter"></i></a><a href="https://github.com/yikemats" target="_blank"><i class="icon ion-social-github"></i></a><a href="https://www.instagram.com/tompearlbasil/" target="_blank"><i class="icon ion-social-instagram"></i></a></i></a>
+        </div>
+        <p class="copyright">Yuka Ikematsu © 2023</p>
+      </footer>
+    </div>
+
+    <script>
+      // video header
+      var video = document.getElementById("myVideo");
+      var btn = document.getElementById("myBtn");
+
+      function myFunction() {
+        if (video.paused) {
+          video.play();
+          btn.innerHTML = "Pause";
+        } else {
+          video.pause();
+          btn.innerHTML = "Play";
+      }}
+    </script>
+
+    <script>
+      /* Scrollytelling code goes under here */
+      d3.select('#g-ai0-2').classed('hidden', true);
+      d3.select('#g-factories-_1-tesla-img').classed('hidden', true);
+      d3.select('#g-ai0-1').classed('hidden', true);
+      d3.select('#g-factories-_1-toyota-img').classed('hidden', true);
+
+      d3.select("#step-one").on('stepin',
+        function (e) {
+          console.log("Reached Step One")
+          d3.select('#g-ai0-2').classed('hidden', false);
+          d3.select('#g-factories-_1-tesla-img').classed('hidden', false);
+          d3.select('#g-ai0-1').classed('hidden', true);
+          d3.select('#g-factories-_1-toyota-img').classed('hidden', true);
+        })
+
+      d3.select("#step-two").on('stepin',
+        function (e) {
+          console.log("Reached Step two")
+          d3.select('#g-ai0-2').classed('hidden', true);
+          d3.select('#g-factories-_1-tesla-img').classed('hidden', true);
+          d3.select('#g-ai0-1').classed('hidden', false);
+          d3.select('#g-factories-_1-toyota-img').classed('hidden', false);
+        })
+
+      d3.select("#step-three").on('stepin',
+        function (e) {
+          console.log("Reached Step three")
+          d3.select('#g-ai0-2').classed('hidden', true);
+          d3.select('#g-factories-_1-tesla-img').classed('hidden', true);
+          d3.select('#g-ai0-1').classed('hidden', true);
+          d3.select('#g-factories-_1-toyota-img').classed('hidden', true);
+        })
+    </script>
+
+    <script>
+        const scroller = scrollama();
+
+      scroller
+        .setup({
+          step: "#scrolly .scrolly-overlay .step",
+          offset: 0.75,
+          debug: false
+        })
+        .onStepEnter(function({ element, index, direction}) {
+          const event = new CustomEvent('stepin', { detail: { direction: direction } })
+          element.dispatchEvent(event);
+        })
+        .onStepExit(function({ element, index, direction }) {
+          const event = new CustomEvent('stepout', { detail: { direction: direction } })
+          element.dispatchEvent(event);
+        });
+
+      window.addEventListener("resize", scroller.resize);
+    </script>
+ 
+    <!-- ai2html resizer script -->
+    <script type="text/javascript">
+      (function() {
+          // only want one resizer on the page
+          if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+          document.documentElement.className += " g-resizer-v3-init";
+          // require IE9+
+          if (!("querySelector" in document)) return;
+          function resizer() {
+              var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+                  widthById = {};
+              elements.forEach(function(el) {
+                  var parent = el.parentNode,
+                      width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                      minwidth = el.getAttribute("data-min-width"),
+                      maxwidth = el.getAttribute("data-max-width");
+                  widthById[parent.id] = width;
+
+                  if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                      el.style.display = "block";
+                  } else {
+                      el.style.display = "none";
+                  }
+              });
+              try {
+                  if (window.parent && window.parent.$) {
+                      window.parent.$("body").trigger("resizedcontent", [window]);
+                  }
+                  if (window.require) {
+                      require(['foundation/main'], function() {
+                          require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                              AppCommunicator.triggerResize();
+                          });
+                      });
+                  }
+              } catch(e) { console.log(e); }
+          }
+
+          document.addEventListener('DOMContentLoaded', resizer);
+          // feel free to replace throttle with _.throttle, if available
+          window.addEventListener('resize', throttle(resizer, 200));        
+
+          function throttle(func, wait) {
+              // from underscore.js
+              var _now = Date.now || function() { return new Date().getTime(); },
+                  context, args, result, timeout = null, previous = 0;
+              var later = function() {
+                  previous = _now();
+                  timeout = null;
+                  result = func.apply(context, args);
+                  if (!timeout) context = args = null;
+              };
+              return function() {
+                  var now = _now(), remaining = wait - (now - previous);
+                  context = this;
+                  args = arguments;
+                  if (remaining <= 0 || remaining > wait) {
+                      if (timeout) {
+                          clearTimeout(timeout);
+                          timeout = null;
+                      }
+                      previous = now;
+                      result = func.apply(context, args);
+                      if (!timeout) context = args = null;
+                  } else if (!timeout && options.trailing !== false) {
+                      timeout = setTimeout(later, remaining);
+                  }
+                  return result;
+              };
+          }
+        })();
+    </script>
+
+    <script>  
+      /* Scrollytelling code goes under here */
+      d3.select('#g-ai0-3').classed('hidden', true);
+      d3.select('#g-suppliers-_1-supplier1-img').classed('hidden', true);
+      d3.select('#g-ai0-4').classed('hidden', true);
+      d3.select('#g-suppliers-_1-supplier2-img').classed('hidden', true);
+
+      d3.select("#step-five").on('stepin',
+        function (e) {
+          console.log("Reached Step One")
+          d3.select('#g-ai0-3').classed('hidden', false);
+          d3.select('#g-suppliers-_1-supplier1-img').classed('hidden', false);
+          d3.select('#g-ai0-4').classed('hidden', true);
+          d3.select('#g-suppliers-_1-supplier2-img').classed('hidden', true);
+        })
+
+      d3.select("#step-six").on('stepin',
+        function (e) {
+          console.log("Reached Step two")
+          d3.select('#g-ai0-3').classed('hidden', true);
+          d3.select('#g-suppliers-_1-supplier1-img').classed('hidden', true);
+          d3.select('#g-ai0-4').classed('hidden', false);
+          d3.select('#g-suppliers-_1-supplier2-img').classed('hidden', false);
+        })
+
+      d3.select("#step-seven").on('stepin',
+        function (e) {
+          console.log("Reached Step three")
+          d3.select('#g-ai0-3').classed('hidden', true);
+          d3.select('#g-suppliers-_1-supplier1-img').classed('hidden', true);
+          d3.select('#g-ai0-4').classed('hidden', true);
+          d3.select('#g-suppliers-_1-supplier2-img').classed('hidden', true);
+        })
+    </script>
+
+
+    <script>
+      const scroller2 = scrollama();
+
+      scroller2
+      .setup({
+        step: "#scrolly2 .scrolly2-overlay .step",
+        offset: 0.75,
+        debug: false
+      })
+      .onStepEnter(function({ element, index, direction}) {
+        const event = new CustomEvent('stepin', { detail: { direction: direction } })
+        element.dispatchEvent(event);
+      })
+      .onStepExit(function({ element, index, direction }) {
+        const event = new CustomEvent('stepout', { detail: { direction: direction } })
+        element.dispatchEvent(event);
+      });
+
+      window.addEventListener("resize", scroller2.resize);
+    </script>
+
+
+      <!-- ai2html resizer script -->
+
+    <script type="text/javascript">
+      (function() {
+          // only want one resizer on the page
+          if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+          document.documentElement.className += " g-resizer-v3-init";
+          // require IE9+
+          if (!("querySelector" in document)) return;
+          function resizer() {
+              var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+                  widthById = {};
+              elements.forEach(function(el) {
+                  var parent = el.parentNode,
+                      width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                      minwidth = el.getAttribute("data-min-width"),
+                      maxwidth = el.getAttribute("data-max-width");
+                  widthById[parent.id] = width;
+
+                  if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                      el.style.display = "block";
+                  } else {
+                      el.style.display = "none";
+                  }
+              });
+              try {
+                  if (window.parent && window.parent.$) {
+                      window.parent.$("body").trigger("resizedcontent", [window]);
+                  }
+                  if (window.require) {
+                      require(['foundation/main'], function() {
+                          require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                              AppCommunicator.triggerResize();
+                          });
+                      });
+                  }
+              } catch(e) { console.log(e); }
+          }
+
+          document.addEventListener('DOMContentLoaded', resizer);
+          // feel free to replace throttle with _.throttle, if available
+          window.addEventListener('resize', throttle(resizer, 200));        
+
+          function throttle(func, wait) {
+              // from underscore.js
+              var _now = Date.now || function() { return new Date().getTime(); },
+                  context, args, result, timeout = null, previous = 0;
+              var later = function() {
+                  previous = _now();
+                  timeout = null;
+                  result = func.apply(context, args);
+                  if (!timeout) context = args = null;
+              };
+              return function() {
+                  var now = _now(), remaining = wait - (now - previous);
+                  context = this;
+                  args = arguments;
+                  if (remaining <= 0 || remaining > wait) {
+                      if (timeout) {
+                          clearTimeout(timeout);
+                          timeout = null;
+                      }
+                      previous = now;
+                      result = func.apply(context, args);
+                      if (!timeout) context = args = null;
+                  } else if (!timeout && options.trailing !== false) {
+                      timeout = setTimeout(later, remaining);
+                  }
+                  return result;
+              };
+          }
+
+        
+      })();
+    </script>
+
+</body>
+
+</html>

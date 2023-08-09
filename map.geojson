@@ -1,0 +1,1 @@
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"Company Name":"Tesla"},"geometry":{"coordinates":[-97.63299811314305,30.257470562820217],"type":"Point"},"id":0},{"type":"Feature","properties":{"Company Name":"Matsuda Toyota Manufacturing"},"geometry":{"coordinates":[-86.8477797500765,34.68020753792928],"type":"Point"},"id":1}]}
