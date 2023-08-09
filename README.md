@@ -13,7 +13,7 @@ But don't get me wrong. I am not opposing or trying to do anything about it, rat
 
 Not only through interviewing factory workers and managers I grew my enthusiasm toward factories while I played at the small factory my father owned in my childhood. Factories are my home where I can relax and be excited at the same time.
 
-Now I am based in New York and cover the US news, and I always wanted to see inside Giga Texas, Tesla built and started production in April 2022. I never had a chance to go inside it, but at least I can analyze how fast it was for them to construct the second-largest building by volume in the world after the Boeing Everett Factory.
+Now I am based in New York and cover the US news, and I always wanted to see inside [Giga Texas](https://www.tesla.com/giga-texas), Tesla built and started production in April 2022. I never had a chance to go inside it, but at least I can analyze how fast it was for them to construct the second-largest building by volume in the world after the Boeing Everett Factory.
 
 ## Data Collection and Analysis:
 
