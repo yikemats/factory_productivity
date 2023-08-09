@@ -1,7 +1,7 @@
-# [Factory Geek Journalist's Aerial Comparison: Tesla vs. Toyota's Latest Factories](https://yikemats.github.io/)
+# [Factory Geek Journalist's Aerial Comparison: Tesla vs. Toyota's Latest Factories](https://yikemats.github.io/factory_productivity/)
 
 ## About this project
-This is my fourth project for [the Lede Program](https://ledeprogram.com) at Columbia University. You can read the story here: [https://yikemats.github.io/](https:// yikemats.github.io/)
+This is my fourth project for [the Lede Program](https://ledeprogram.com) at Columbia University. You can read the story here: [https://yikemats.github.io/factory_productivity/](https://yikemats.github.io/factory_productivity/)
 
 In three of my previous projects, I either extracted, scraped, or analyzed data sets to extend the data gathering/analysis skills I learned in the course. But I didn't do any of these for this project.
 
